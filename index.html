@@ -211,7 +211,6 @@ document.addEventListener('DOMContentLoaded', async function() {
     });
 
     const uuids = Object.keys(manifest);
-    setStatus('Unpacking ' + uuids.length + ' assets...');
 
     await Promise.all(uuids.map(async (uuid) => {
       const entry = manifest[uuid];
@@ -276,7 +275,6 @@ document.addEventListener('DOMContentLoaded', async function() {
     // consumers read these Blobs directly. Survives the swap like the error sink.
     window.__resourceBlobs = resourceBlobs;
 
-    setStatus('Rendering...');
     // Page uuids have no blob here — they ride inside about:blank#<uuid>
     // frame markers the pass below resolves after the swap.
     for (const uuid of uuids) {
