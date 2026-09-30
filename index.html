@@ -20,13 +20,13 @@
 </head>
 <body>
   <div id="__bundler_thumbnail"><svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg"><rect width="400" height="400" fill="#de7655"></rect><text x="200" y="250" text-anchor="middle" font-family="Georgia,serif" font-size="150" font-weight="700" fill="#fffdf9">Q2</text></svg></div>
-  <div id="__bundler_loading">Unpacking...</div>
+  <div id="__bundler_loading" style="display:none"></div>
 
   <script>
     
 document.addEventListener('DOMContentLoaded', async function() {
   const loading = document.getElementById('__bundler_loading');
-  function setStatus(msg) { if (loading) loading.textContent = msg; }
+  function setStatus(msg) { if (loading) { loading.textContent = msg; loading.style.display = 'block'; } }
 
   const FONT_MIME = /^(font[/]|application[/](x-)?font-|application[/]vnd\.ms-fontobject)/i;
   const MIME_TOKEN = /^[\w.+-]+[/][\w.+-]+$/;
